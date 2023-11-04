@@ -13,7 +13,20 @@
 // 	return messageLenght * pricePerWord;
 // }
 // console.log(calculateEngravingPrice("JavaScript is in my blood", 10));
-let firstName = null;
-let nickName = "Суперкодер";
 
-console.log(firstName ?? nickName ?? "Анонім");
+// function getSlice(array, value) {
+// 	const checkValue = array.indexOf(value);
+// 	const index = checkValue + 1;
+// 	return checkValue >= 0 ? array.slice(0, index) : [];
+// }
+
+function createArrayOfNumbers(min, max) {
+	const array = [];
+
+	for (let i = min; i <= max; i += 1) {
+		array.push(i);
+	}
+	return array;
+}
+
+console.log(createArrayOfNumbers(14, 17));
