@@ -39,23 +39,51 @@
 // }
 // console.log(values);
 
-function getProductPrice(productName) {
+// function getProductPrice(productName) {
+// 	const products = [
+// 		{ name: "Radar", price: 1300, quantity: 4 },
+// 		{ name: "Scanner", price: 2700, quantity: 3 },
+// 		{ name: "Droid", price: 400, quantity: 7 },
+// 		{ name: "Grip", price: 1200, quantity: 9 },
+// 	];
+// 	for (let namePr of products) {
+// 		if (namePr.name === productName) {
+// 			return namePr.price;
+// 		}
+// 	}
+// 	return "null";
+// }
+// console.log(getProductPrice("Radar")); //  повертає 1300.
+
+// console.log(getProductPrice("Grip")); //  повертає 1200.
+// console.log(getProductPrice("Scanner")); //  повертає 2700.
+// console.log(getProductPrice("Droid")); //  повертає 400.
+// console.log(getProductPrice("Engine")); // повертає null.
+
+function getAllPropValues(propName) {
 	const products = [
 		{ name: "Radar", price: 1300, quantity: 4 },
 		{ name: "Scanner", price: 2700, quantity: 3 },
 		{ name: "Droid", price: 400, quantity: 7 },
 		{ name: "Grip", price: 1200, quantity: 9 },
 	];
-	for (let namePr of products) {
-		if (namePr.name === productName) {
-			return namePr.price;
+
+	const resultArray = [];
+	for (let objectItem of products) {
+		const object = Object.keys(objectItem);
+		for (const objectKey of object) {
+			if (objectKey === propName) {
+				for (let nameObject of products) {
+					resultArray.push(nameObject[propName]);
+				}
+				return resultArray;
+			}
 		}
 	}
-	return "null";
+	return resultArray;
 }
-console.log(getProductPrice("Radar")); //  повертає 1300.
 
-console.log(getProductPrice("Grip")); //  повертає 1200.
-console.log(getProductPrice("Scanner")); //  повертає 2700.
-console.log(getProductPrice("Droid")); //  повертає 400.
-console.log(getProductPrice("Engine")); // повертає null.
+console.log(getAllPropValues("name")); // повертає ["Radar", "Scanner", "Droid", "Grip"]
+console.log(getAllPropValues("quantity")); // повертає [4, 3, 7, 9]
+console.log(getAllPropValues("price")); // повертає [1300, 2700, 400, 1200]
+console.log(getAllPropValues("category")); // повертає []
