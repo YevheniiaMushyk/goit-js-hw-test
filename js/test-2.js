@@ -60,7 +60,59 @@
 // console.log(getProductPrice("Droid")); //  повертає 400.
 // console.log(getProductPrice("Engine")); // повертає null.
 
-function getAllPropValues(propName) {
+// function getAllPropValues(propName) {
+// 	const products = [
+// 		{ name: "Radar", price: 1300, quantity: 4 },
+// 		{ name: "Scanner", price: 2700, quantity: 3 },
+// 		{ name: "Droid", price: 400, quantity: 7 },
+// 		{ name: "Grip", price: 1200, quantity: 9 },
+// 	];
+
+// 	const resultArray = [];
+// 	for (let objectItem of products) {
+// 		const object = Object.keys(objectItem);
+// 		for (const objectKey of object) {
+// 			if (objectKey === propName) {
+// 				for (let nameObject of products) {
+// 					resultArray.push(nameObject[propName]);
+// 				}
+// 				return resultArray;
+// 			}
+// 		}
+// 	}
+// 	return resultArray;
+// }
+
+// console.log(getAllPropValues("name")); // повертає ["Radar", "Scanner", "Droid", "Grip"]
+// console.log(getAllPropValues("quantity")); // повертає [4, 3, 7, 9]
+// console.log(getAllPropValues("price")); // повертає [1300, 2700, 400, 1200]
+// console.log(getAllPropValues("category")); // повертає []
+
+// function calculateTotalPrice(productName) {
+// 	const products = [
+// 		{ name: "Radar", price: 1300, quantity: 4 },
+// 		{ name: "Scanner", price: 2700, quantity: 3 },
+// 		{ name: "Droid", price: 400, quantity: 7 },
+// 		{ name: "Grip", price: 1200, quantity: 9 },
+// 	];
+// 	// for (let keyItem in objectItem) {
+// 	let totalPrice = 1;
+// 	for (let objectItem of products) {
+// 		if (objectItem.name === productName) {
+// 			totalPrice = objectItem.price * objectItem.quantity;
+// 			return totalPrice;
+// 		}
+// 	}
+
+// 	return `Product ${productName} not found!`;
+// }
+// console.log(calculateTotalPrice("Blaster"));
+// console.log(calculateTotalPrice("Radar"));
+// console.log(calculateTotalPrice("Droid"));
+// console.log(calculateTotalPrice("Grip"));
+// console.log(calculateTotalPrice("Scanner"));
+
+function calculateTotalPrice(productName) {
 	const products = [
 		{ name: "Radar", price: 1300, quantity: 4 },
 		{ name: "Scanner", price: 2700, quantity: 3 },
@@ -68,22 +120,15 @@ function getAllPropValues(propName) {
 		{ name: "Grip", price: 1200, quantity: 9 },
 	];
 
-	const resultArray = [];
 	for (let objectItem of products) {
-		const object = Object.keys(objectItem);
-		for (const objectKey of object) {
-			if (objectKey === propName) {
-				for (let nameObject of products) {
-					resultArray.push(nameObject[propName]);
-				}
-				return resultArray;
-			}
+		for (let keyItem in objectItem) {
+			console.log(keyItem);
 		}
+		console.log(objectItem);
+		console.log(Object.keys(objectItem));
+		console.log(Object.values(objectItem));
 	}
-	return resultArray;
-}
 
-console.log(getAllPropValues("name")); // повертає ["Radar", "Scanner", "Droid", "Grip"]
-console.log(getAllPropValues("quantity")); // повертає [4, 3, 7, 9]
-console.log(getAllPropValues("price")); // повертає [1300, 2700, 400, 1200]
-console.log(getAllPropValues("category")); // повертає []
+	return `Product ${productName} not found!`;
+}
+console.log(calculateTotalPrice("Radar"));
