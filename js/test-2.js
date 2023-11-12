@@ -112,23 +112,52 @@
 // console.log(calculateTotalPrice("Grip"));
 // console.log(calculateTotalPrice("Scanner"));
 
-function calculateTotalPrice(productName) {
-	const products = [
-		{ name: "Radar", price: 1300, quantity: 4 },
-		{ name: "Scanner", price: 2700, quantity: 3 },
-		{ name: "Droid", price: 400, quantity: 7 },
-		{ name: "Grip", price: 1200, quantity: 9 },
-	];
+//
 
-	for (let objectItem of products) {
-		for (let keyItem in objectItem) {
-			console.log(keyItem);
-		}
-		console.log(objectItem);
-		console.log(Object.keys(objectItem));
-		console.log(Object.values(objectItem));
+// const atTheOldToad = {
+// 	potions: [
+// 		{ name: "Speed potion", price: 460 },
+// 		{ name: "Stone skin", price: 520 },
+// 	],
+// 	getPotions() {
+// 		return this.potions;
+// 	},
+// 	addPotion(newPotion) {
+// 		this.potions.push(newPotion);
+// 	},
+// 	getTotalPrice() {
+// 		let totalPrice = 0;
+// 		for (let objectPrice of this.potions) {
+// 			totalPrice += objectPrice.price;
+// 		}
+// 		return totalPrice;
+// 	},
+// };
+// console.log(atTheOldToad.getTotalPrice());
+
+function sequentialSizes(val) {
+	let answer = "";
+	// Змініть код лише під цим рядком
+	switch (val) {
+		case 1:
+		case 2:
+		case 3:
+			answer = "Low";
+			break;
+		case 4:
+		case 5:
+		case 6:
+			answer = "Mid";
+			break;
+		case 7:
+		case 8:
+		case 9:
+			answer = "High";
+			break;
 	}
 
-	return `Product ${productName} not found!`;
+	// Змініть код лише над цим рядком
+	return answer;
 }
-console.log(calculateTotalPrice("Radar"));
+
+console.log(sequentialSizes(1));
