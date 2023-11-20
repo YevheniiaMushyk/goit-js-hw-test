@@ -24,7 +24,7 @@
 // }
 
 // console.log(calculateTotalPrice([412, 371, 94, 63, 176]));
-
+//
 const users = [
 	{
 		name: "Moore Hensley",
@@ -33,9 +33,7 @@ const users = [
 		friends: ["Sharron Pace"],
 		isActive: false,
 		balance: 2811,
-		skills: ["ipsum", "lorem"],
 		gender: "male",
-		age: 37,
 	},
 	{
 		name: "Sharlene Bush",
@@ -44,9 +42,7 @@ const users = [
 		friends: ["Briana Decker", "Sharron Pace"],
 		isActive: true,
 		balance: 3821,
-		skills: ["tempor", "mollit", "commodo", "veniam", "laborum"],
 		gender: "female",
-		age: 34,
 	},
 	{
 		name: "Ross Vazquez",
@@ -55,9 +51,7 @@ const users = [
 		friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
 		isActive: false,
 		balance: 3793,
-		skills: ["nulla", "anim", "proident", "ipsum", "elit"],
 		gender: "male",
-		age: 24,
 	},
 	{
 		name: "Elma Head",
@@ -66,9 +60,7 @@ const users = [
 		friends: ["Goldie Gentry", "Aisha Tran"],
 		isActive: true,
 		balance: 2278,
-		skills: ["adipisicing", "irure", "velit"],
 		gender: "female",
-		age: 21,
 	},
 	{
 		name: "Carey Barr",
@@ -77,9 +69,7 @@ const users = [
 		friends: ["Jordan Sampson", "Eddie Strong"],
 		isActive: true,
 		balance: 3951,
-		skills: ["ex", "culpa", "nostrud"],
 		gender: "male",
-		age: 27,
 	},
 	{
 		name: "Blackburn Dotson",
@@ -88,9 +78,7 @@ const users = [
 		friends: ["Jacklyn Lucas", "Linda Chapman"],
 		isActive: false,
 		balance: 1498,
-		skills: ["non", "amet", "ipsum"],
 		gender: "male",
-		age: 38,
 	},
 	{
 		name: "Sheree Anthony",
@@ -99,13 +87,26 @@ const users = [
 		friends: ["Goldie Gentry", "Briana Decker"],
 		isActive: true,
 		balance: 2764,
-		skills: ["lorem", "veniam", "culpa"],
 		gender: "female",
-		age: 39,
 	},
 ];
-
-const getUserEmails = (users) => {
-	users.map((users) => users.email);
+const getUsersWithEyeColor = (users, color) => {
+	const result = users.filter((users) => users.eyeColor === color);
+	console.log(result);
 };
-console.log(getUserEmails(users));
+
+getUsersWithEyeColor(users, "brown");
+
+// const LOW_SCORE = 50;
+// const HIGH_SCORE = 80;
+// const students = [
+// 	{ name: "Mango", score: 83 },
+// 	{ name: "Poly", score: 59 },
+// 	{ name: "Ajax", score: 37 },
+// 	{ name: "Kiwi", score: 94 },
+// 	{ name: "Houston", score: 64 },
+// ];
+
+// // У колбек-функції зручно деструктуризувати властивості об'єкта
+// const average = students.filter(({ score }) => score >= LOW_SCORE && score < HIGH_SCORE);
+// console.log(average); // Масив об'єктів з іменами Poly і Houston
