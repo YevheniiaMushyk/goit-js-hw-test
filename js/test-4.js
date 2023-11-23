@@ -228,22 +228,35 @@
 
 // console.log(updateRecords(recordCollection, 5439, "tracks", "Take a Chance on Me"));
 
-function multiplyAll(arr) {
-	let product = 1;
-	// Змініть код лише під цим рядком
-	for (let i = 0; i < arr.length; i++) {
-		let total = 1;
-		for (let j = 0; j < arr[i].length; j++) {
-			total = total * arr[i][j];
-		}
-		product = product * total;
-	}
-	// Змініть код лише над цим рядком
-	return product;
-}
+// function multiplyAll(arr) {
+// 	let product = 1;
+// 	// Змініть код лише під цим рядком
+// 	for (let i = 0; i < arr.length; i++) {
+// 		let total = 1;
+// 		for (let j = 0; j < arr[i].length; j++) {
+// 			total = total * arr[i][j];
+// 		}
+// 		product = product * total;
+// 	}
+// 	// Змініть код лише над цим рядком
+// 	return product;
+// }
 
-multiplyAll([
-	[1, 2],
-	[3, 4],
-	[5, 6, 7],
-]);
+// multiplyAll([
+// 	[1, 2],
+// 	[3, 4],
+// 	[5, 6, 7],
+// ]);
+
+//
+
+function countdown(n) {
+	if (n < 1) {
+		return [];
+	} else {
+		const countArray = countdown(n - 1);
+		countArray.push(n - n + 1);
+		return countArray;
+	}
+}
+console.log(countdown(10));
