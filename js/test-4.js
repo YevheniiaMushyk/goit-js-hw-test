@@ -250,13 +250,46 @@
 
 //
 
-function countdown(n) {
-	if (n < 1) {
-		return [];
-	} else {
-		const countArray = countdown(n - 1);
-		countArray.push(n - n + 1);
-		return countArray;
+// function countdown(n) {
+// 	if (n < 1) {
+// 		return [];
+// 	} else {
+// 		const countArray = countdown(n - 1);
+// 		countArray.push(n);
+// 		return countArray;
+// 	}
+// }
+// console.log(countdown(10));
+
+class Car {
+	static maxPrice = 50000;
+
+	#price;
+	#statPrice;
+
+	constructor({ price, statPrice = Car.maxPrice }) {
+		this.#price = price;
+		this.#statPrice = statPrice;
+	}
+
+	get price() {
+		return this.#price;
+	}
+
+	set price(newPrice) {
+		if (newPrice <= this.#statPrice) {
+			this.#price = newPrice;
+		} else {
+			return this.#price;
+		}
 	}
 }
-console.log(countdown(10));
+
+const audi = new Car({ price: 35000 });
+console.log(audi.price); // 35000
+
+audi.price = 49000;
+console.log(audi.price); // 49000
+
+audi.price = 51000;
+console.log(audi.price); // 49000
