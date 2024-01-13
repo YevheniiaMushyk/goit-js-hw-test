@@ -109,15 +109,15 @@
 // Процес переривається, коли користувач натискає вводить порожній рядок.
 // Усі елементи мають створюватися динамічно.
 
-{
-	/* <ul class="list"></ul> */
-}
+// {
+// 	/* <ul class="list"></ul> */
+// }
 
-const list = document.querySelector(".list");
-let value = null;
-const arr = [];
-do {
-	value = prompt("Enter text");
-	if (value) arr.push(`<li>${value}</li>`);
-} while (value);
-list.insertAdjacentHTML("beforeend", arr.join(""));
+// const list = document.querySelector(".list");
+// let value = null;
+// const arr = [];
+// do {
+// 	value = prompt("Enter text");
+// 	if (value) arr.push(`<li>${value}</li>`);
+// } while (value);
+// list.insertAdjacentHTML("beforeend", arr.join(""));
