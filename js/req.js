@@ -34,30 +34,6 @@ export function fetchWorkoutById(workoutId) {
 	return axios.get(`${API_URL}/${workoutId}`);
 }
 
-// Функція для додавання нової карточки вправи до списку за _id
-// function addNewWorkoutById(workoutId) {
-//   const storedWorkoutIds =
-//     JSON.parse(localStorage.getItem('ENERGY_FLOW_FAVORITES_KEY')) || [];
-//   if (!storedWorkoutIds.includes(workoutId)) {
-//     fetchWorkoutById(workoutId)
-//       .then(response => {
-//         const workoutData = response.data;
-//         addWorkoutCardToDOM(workoutData);
-
-//         storedWorkoutIds.push(workoutId);
-//         localStorage.setItem(
-//           'ENERGY_FLOW_FAVORITES_KEY',
-//           JSON.stringify(storedWorkoutIds)
-//         );
-
-//         isFirstLoad = false;
-//       })
-//       .catch(error => {
-//         console.error(error);
-//       });
-//   }
-// }
-
 // Функція для додавання нової карточки вправи до списку
 function addWorkoutCardToDOM(workoutData) {
 	const workoutCardMarkup = createWorkoutCardMarkup(workoutData);
@@ -104,11 +80,6 @@ function removeWorkoutCardFromDOM(removeButton, workoutId) {
 		showEmptyMessage();
 	}
 }
-
-// const closeModalButton = document.querySelector('.close-modal-button');
-// closeModalButton.addEventListener('click', () => {
-//     addRemoveButtonEventListener();
-// });
 
 function createWorkoutCardMarkup(workoutData) {
 	const workoutCardMarkup = `
